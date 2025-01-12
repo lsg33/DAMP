@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Damp Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #1d1d1d;
+            color: #fff;
+        }
+
+        /* Header and Hamburger Menu */
+        .top-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .menu-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background: white;
+            margin: 5px 0;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 250px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            padding: 20px;
+            transition: right 0.3s ease;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-links.open {
+            right: 0;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links ul li {
+            margin: 20px 0;
+        }
+
+        .nav-links ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            padding: 50px 0;
+            background-image: url('your-image-url.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            margin-top: 50px; /* Adjust for fixed nav */
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .countdown {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        /* Panels and Sections */
+        section {
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .panel {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .panel.fade-in {
+            opacity: 1;
+        }
+
+        .faq {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .faq div {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 40px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hamburger Menu -->
+<div class="top-nav">
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <div class="nav-links" id="navMenu">
+        <ul>
+            <li><a href="#infoPanel">Information</a></li>
+            <li><a href="#faqPanel">FAQ</a></li>
+            <li><a href="#leaksPanel">Leaks</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<header>
+    <h1>Damp Game</h1>
+    <div class="countdown">
+        <p>Launching in: <span id="countdown"></span></p>
+    </div>
+</header>
+
+<section>
+    <div id="infoPanel" class="panel animate__animated animate__fadeIn">
+        <h2>Game Information</h2>
+        <p>Discover the thrilling experience of Damp, a psychological horror game like no other. Explore eerie environments, solve puzzles, and survive the darkness.</p>
+    </div>
+
+    <div id="faqPanel" class="panel animate__animated animate__fadeIn">
+        <h2>FAQs</h2>
+        <div class="faq">
+            <div>
+                <h3>What is Damp?</h3>
+        <p><strong>DAMP (Diddy's Afterparty Multiplayer)</strong></p>
+
+<p>Welcome to DAMP, a terrifying multiplayer horror experience that will leave you drenched in fear! The party may be over, but Diddy's twisted game has just begun...</p>
+
+<p><strong>Plot:</strong><br>
+It's dark. It's eerie. The aftermath of Diddy's afterparty has left the place in ruins, and you, along with a group of survivors, must escape. But Diddy isn't done with you yet. He prowls the area, hunting for you and your friends. Your mission? Collect as many of his creepy "babies" as possible while avoiding his relentless pursuit. If you see him, hide—because if he catches sight of you, he won't hesitate to throw baby oil to stop you in your tracks!</p>
+
+<p><strong>Gameplay:</strong><br>
+<strong>Multiplayer Madness:</strong> Team up with your friends (or go solo if you dare!) in an adrenaline-pumping game of cat and mouse. Work together to collect the babies scattered across the map—but don't get caught!<br>
+<strong>Terrifying Pursuit:</strong> Diddy is always lurking, waiting for the right moment to strike. If you hear his footsteps, find a hiding spot fast!<br>
+<strong>Baby Oil Terror:</strong> If Diddy catches you in his sight, he’ll hurl slippery baby oil at you, slowing your movement and making it harder to escape. Can you survive the oil-slicked terror?<br>
+<strong>Hide or Run:</strong> Stay out of Diddy's line of sight, or risk being cornered by this relentless chaser. Use your environment to your advantage—dark corners, closets, and other hiding spots will be your best friends.</p>
+
+<p><strong>Features:</strong><br>
+<strong>Chilling Atmosphere:</strong> A dark, creepy environment filled with eerie sounds, flickering lights, and horrifying surprises around every corner.<br>
+<strong>Strategic Teamwork:</strong> Communicate with your friends, devise strategies, and work together to collect babies while avoiding the horrors of Diddy's afterparty.<br>
+<strong>Survival Horror Tension:</strong> Every encounter with Diddy brings heart-pounding tension. Will you survive his afterparty or become another victim of his twisted game?</p>
+
+<p><strong>Can you outsmart Diddy?</strong><br>
+Find the babies, avoid the oil, and survive the night... if you can. DAMP is a chilling multiplayer horror game that will have you screaming for more!</p>
+
+<p><strong>Warning:</strong> Playing with friends recommended... unless you enjoy screaming alone.</p>
+            </div>
+            <div>
+                <h3>When is it releasing?</h3>
+                <p>The game will be released on 1/19/25. Stay tuned for more updates!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="leaksPanel" class="panel animate__animated animate__fadeIn">
+        <h2>Leaks</h2>
+        <div class="gallery">
+            <img src="leak1.jpg" alt="Leak 1">
+            <img src="leak2.jpg" alt="Leak 2">
+            <img src="leak3.jpg" alt="Leak 3">
+        </div>
+    </div>
+</section>
+
+<footer id="footer">
+    <p>&copy; 2025 Damp Game. All rights reserved.</p>
+</footer>
+
+<script>
+    // Countdown Timer
+    const countdownElement = document.getElementById("countdown");
+    const countdownDate = new Date("Jan 20, 2025 00:00:00").getTime();
+
+    setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        if (distance < 0) {
+            clearInterval(x);
+            countdownElement.innerHTML = "EXPIRED";
+        }
+    }, 1000);
+
+    // Hamburger Menu Toggle
+    function toggleMenu() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('open');
+    }
+
+    // Scroll Animation Trigger
+    const panels = document.querySelectorAll('.panel');
+    const triggerAnimation = () => {
+        panels.forEach(panel => {
+            const rect = panel.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                panel.classList.add('fade-in');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', triggerAnimation);
+    triggerAnimation(); // Run initially to check if the panel is in view
+</script>
+
+</body>
+</html>
